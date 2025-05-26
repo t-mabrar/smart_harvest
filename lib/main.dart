@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_components/flutter_components.dart';
 import 'package:smart_harvest/core/app_theme.dart';
 import 'package:smart_harvest/screens/splash_screen.dart';
 

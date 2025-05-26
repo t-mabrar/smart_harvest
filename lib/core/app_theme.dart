@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_components/flutter_components.dart';
 
 class AppTheme {
+  static String greycliffFont = "GreycliffRegular";
+
   static ThemeData appTheme = ThemeData(
     indicatorColor: Color(0xFF331201),
     colorScheme: ColorScheme(
@@ -13,6 +16,10 @@ class AppTheme {
       onError: Colors.red,
       surface: Colors.black,
       onSurface: Colors.black,
+    ),
+    textTheme: AppUtils.textTheme(
+      fontFamily: greycliffFont,
+      defaultColor: Colors.white,
     ),
   );
 }
