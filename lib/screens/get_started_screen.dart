@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_components/flutter_components.dart';
+import 'package:smart_harvest/screens/onboarding_screen.dart';
 import 'package:smart_harvest/screens/widgets/app_background.dart';
 import 'package:smart_harvest/screens/widgets/designer_details.dart';
 
@@ -89,7 +90,14 @@ class _GetStartedScreenState extends State<GetStartedScreen> {
                   ),
                   AppButton(
                     title: "Get Started",
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => OnBoardingScreen(),
+                        ),
+                      );
+                    },
                     elevation: 0.0,
                     isExpanded: true,
                     borderRadius: 50.0,

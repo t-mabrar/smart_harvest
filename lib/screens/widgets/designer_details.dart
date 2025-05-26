@@ -10,7 +10,7 @@ class DesignerDetails extends StatelessWidget {
       child: Text(
         "Design with 💛 by CheetahFigX\nDeveloped by mabrar.site",
         textAlign: TextAlign.center,
-        style: context.textTheme.bodyLarge,
+        style: context.textTheme.bodyMedium,
       ),
     );
   }
