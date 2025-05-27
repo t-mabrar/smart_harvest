@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_components/flutter_components.dart';
+import 'package:smart_harvest/screens/auth_screens/login_screen.dart';
 import 'package:smart_harvest/screens/widgets/app_background.dart';
 
 class OnBoardingScreen extends StatefulWidget {
@@ -32,7 +33,6 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 child: SizedBox(
                   height: context.height * 0.7,
                   child: PageView(
-                    // physics: CarouselScrollPhysics(),
                     onPageChanged: (index) {
                       setState(() {
                         _currentPage = index;
@@ -91,7 +91,6 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                   ),
                   Expanded(
                     child: AppButton(
-                      elevation: 0.0,
                       isExpanded: true,
                       title: _currentPage == 2 ? "Sign In" : "Next",
                       onPressed: () {
@@ -100,7 +99,14 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                             duration: Duration(seconds: 1),
                             curve: Curves.ease,
                           );
-                        } else {}
+                        } else {
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => LoginScreen(),
+                            ),
+                          );
+                        }
                       },
                       borderRadius: 50.0,
                     ),

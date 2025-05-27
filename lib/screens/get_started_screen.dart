@@ -50,7 +50,6 @@ class _GetStartedScreenState extends State<GetStartedScreen> {
                   AppButton(
                     title: "Secure, Simple, Smart Harvesting",
                     onPressed: () {},
-                    elevation: 0.0,
                     borderRadius: 50.0,
                     color: context.primaryColor.withAlpha(
                       ((255 / 100) * 40).toInt(),
@@ -98,7 +97,6 @@ class _GetStartedScreenState extends State<GetStartedScreen> {
                         ),
                       );
                     },
-                    elevation: 0.0,
                     isExpanded: true,
                     borderRadius: 50.0,
                     fontSize: 20.0,
