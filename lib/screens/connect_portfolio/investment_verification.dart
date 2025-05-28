@@ -1,20 +1,19 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_components/flutter_components.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:flutter_timer_countdown/flutter_timer_countdown.dart';
-import 'package:smart_harvest/screens/connect_portfolio/connect_your_portfolio.dart';
+import 'package:smart_harvest/screens/connect_portfolio/investment_permissions.dart';
 import 'package:smart_harvest/screens/widgets/app_background.dart';
 
-class OtpVerification extends StatefulWidget {
-  final String mobileNumber;
-  const OtpVerification({super.key, required this.mobileNumber});
+class InvestmentVerification extends StatefulWidget {
+  final String type;
+  const InvestmentVerification({super.key, required this.type});
 
   @override
-  State<OtpVerification> createState() => _OtpVerificationState();
+  State<InvestmentVerification> createState() => InvestmentVerificationState();
 }
 
-class _OtpVerificationState extends State<OtpVerification> {
+class InvestmentVerificationState extends State<InvestmentVerification> {
   bool showResendButton = false;
   bool enableVerifyButton = false;
   int endTime = 59;
@@ -24,9 +23,8 @@ class _OtpVerificationState extends State<OtpVerification> {
       body: AppBackground(
         child: SafeArea(
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 12.0),
+            padding: const EdgeInsets.symmetric(horizontal: 12.0),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(height: 40.0),
                 Expanded(
@@ -34,7 +32,7 @@ class _OtpVerificationState extends State<OtpVerification> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "Welcome to the club".toUpperCase(),
+                        "Connect your ${widget.type} Portfolio".toUpperCase(),
                         style: context.textTheme.bodyLarge,
                       ),
                       Text(
@@ -44,27 +42,20 @@ class _OtpVerificationState extends State<OtpVerification> {
                       SizedBox(height: 20.0),
                       RichText(
                         text: TextSpan(
+                          text: "We have sent an email to ",
+                          style: context.textTheme.bodyMedium,
                           children: [
                             TextSpan(
-                              text:
-                                  "Enter the code from the sms which we sent to the number +91-${widget.mobileNumber} (",
+                              text: "mohammedabrar312@gmail.com,",
+                              style: context.textTheme.bodyMedium!.copyWith(
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                             TextSpan(
-                              text: "Change",
-                              style: context.textTheme.bodyMedium!.copyWith(
-                                color: context.primaryColor,
-                                decoration: TextDecoration.underline,
-                                decorationColor: context.primaryColor,
-                              ),
-                              recognizer:
-                                  TapGestureRecognizer()
-                                    ..onTap = () {
-                                      Navigator.of(context).pop();
-                                    },
+                              text: " please enter the code below.",
+                              style: context.textTheme.bodyMedium,
                             ),
-                            TextSpan(text: ")"),
                           ],
-                          style: context.textTheme.bodyMedium,
                         ),
                       ),
                       SizedBox(height: 20.0),
@@ -149,7 +140,9 @@ class _OtpVerificationState extends State<OtpVerification> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => ConnectYourPortfolio(),
+                        builder:
+                            (context) =>
+                                InvestmentPermission(type: widget.type),
                       ),
                     );
                   },

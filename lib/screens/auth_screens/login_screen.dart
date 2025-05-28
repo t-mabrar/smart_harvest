@@ -4,6 +4,7 @@ import 'package:flutter_components/flutter_components.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:smart_harvest/screens/auth_screens/otp_verification.dart';
 import 'package:smart_harvest/screens/widgets/app_background.dart';
+import 'package:smart_harvest/screens/widgets/terms_conditions_and_privacy_policy.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -91,34 +92,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         ],
                       ),
                       SizedBox(height: 20.0),
-                      RichText(
-                        text: TextSpan(
-                          children: [
-                            TextSpan(text: "By proceeding, you agree to "),
-                            TextSpan(
-                              text: "Terms & Conditions",
-                              style: context.textTheme.bodySmall!.copyWith(
-                                color: context.primaryColor,
-                                decoration: TextDecoration.underline,
-                                decorationColor: context.primaryColor,
-                              ),
-                              recognizer: TapGestureRecognizer()..onTap = () {},
-                            ),
-                            TextSpan(text: " and "),
-                            TextSpan(
-                              text: "Privacy Policy",
-                              style: context.textTheme.bodySmall!.copyWith(
-                                color: context.primaryColor,
-                                decoration: TextDecoration.underline,
-                                decorationColor: context.primaryColor,
-                              ),
-                              recognizer: TapGestureRecognizer()..onTap = () {},
-                            ),
-                            TextSpan(text: " of Smart Harvesting."),
-                          ],
-                          style: context.textTheme.bodySmall,
-                        ),
-                      ),
+                      TermsConditionsAndPrivacyPolicy(),
                     ],
                   ),
                 ),
