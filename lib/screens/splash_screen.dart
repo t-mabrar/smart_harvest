@@ -35,7 +35,7 @@ class _SplashScreenState extends State<SplashScreen> {
               bottom: 30.0,
               right: 0.0,
               left: 0.0,
-              child: DesignerDetails(),
+              child: Center(child: DesignerDetails()),
             ),
           ],
         ),

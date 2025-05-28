@@ -102,7 +102,7 @@ class _GetStartedScreenState extends State<GetStartedScreen> {
                     fontSize: 20.0,
                     fontWeight: FontWeight.bold,
                   ),
-                  DesignerDetails(),
+                  Center(child: DesignerDetails()),
                 ],
               ),
             ),
