@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_components/flutter_components.dart';
 import 'package:smart_harvest/screens/connect_portfolio/investment_verification.dart';
 import 'package:smart_harvest/screens/widgets/app_background.dart';
+import 'package:smart_harvest/screens/widgets/pre_title_and_title.dart';
 import 'package:smart_harvest/screens/widgets/terms_conditions_and_privacy_policy.dart';
 
 class ConnectYourPortfolio extends StatefulWidget {
@@ -24,14 +25,8 @@ class _ConnectYourPortfolioState extends State<ConnectYourPortfolio> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(height: 40.0),
-                Text(
-                  "Let’s manage your investments".toUpperCase(),
-                  style: context.textTheme.bodyLarge,
-                ),
-                Text(
-                  "Connect\nYour Portfolio",
-                  style: context.textTheme.headlineMedium,
-                ),
+                ScreenPreTitle("Let’s manage your investments"),
+                ScreenTitle("Connect\nYour Portfolio"),
                 Expanded(
                   child: Column(
                     spacing: 20.0,

@@ -4,6 +4,7 @@ import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:flutter_timer_countdown/flutter_timer_countdown.dart';
 import 'package:smart_harvest/screens/connect_portfolio/investment_permissions.dart';
 import 'package:smart_harvest/screens/widgets/app_background.dart';
+import 'package:smart_harvest/screens/widgets/pre_title_and_title.dart';
 
 class InvestmentVerification extends StatefulWidget {
   final String type;
@@ -31,14 +32,8 @@ class InvestmentVerificationState extends State<InvestmentVerification> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        "Connect your ${widget.type} Portfolio".toUpperCase(),
-                        style: context.textTheme.bodyLarge,
-                      ),
-                      Text(
-                        "OTP\nVerification",
-                        style: context.textTheme.headlineMedium,
-                      ),
+                      ScreenPreTitle("Connect your ${widget.type} Portfolio"),
+                      ScreenTitle("OTP\nVerification"),
                       SizedBox(height: 20.0),
                       RichText(
                         text: TextSpan(

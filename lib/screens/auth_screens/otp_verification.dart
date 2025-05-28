@@ -5,6 +5,7 @@ import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:flutter_timer_countdown/flutter_timer_countdown.dart';
 import 'package:smart_harvest/screens/connect_portfolio/connect_your_portfolio.dart';
 import 'package:smart_harvest/screens/widgets/app_background.dart';
+import 'package:smart_harvest/screens/widgets/pre_title_and_title.dart';
 
 class OtpVerification extends StatefulWidget {
   final String mobileNumber;
@@ -33,14 +34,8 @@ class _OtpVerificationState extends State<OtpVerification> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        "Welcome to the club".toUpperCase(),
-                        style: context.textTheme.bodyLarge,
-                      ),
-                      Text(
-                        "OTP\nVerification",
-                        style: context.textTheme.headlineMedium,
-                      ),
+                      ScreenPreTitle("Welcome to the club"),
+                      ScreenTitle("OTP\nVerification"),
                       SizedBox(height: 20.0),
                       RichText(
                         text: TextSpan(

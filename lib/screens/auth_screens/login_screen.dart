@@ -4,6 +4,7 @@ import 'package:flutter_components/flutter_components.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:smart_harvest/screens/auth_screens/otp_verification.dart';
 import 'package:smart_harvest/screens/widgets/app_background.dart';
+import 'package:smart_harvest/screens/widgets/pre_title_and_title.dart';
 import 'package:smart_harvest/screens/widgets/terms_conditions_and_privacy_policy.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -33,15 +34,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       SizedBox(height: 40.0),
-                      Text(
-                        "Welcome to the club".toUpperCase(),
-                        style: context.textTheme.bodyLarge,
-                      ),
-                      SizedBox(height: 20.0),
-                      Text(
-                        "Tell us your\nmobile number",
-                        style: context.textTheme.headlineMedium,
-                      ),
+                      ScreenPreTitle("Welcome to the club"),
+                      ScreenTitle("Tell us your\nmobile number"),
                       SizedBox(height: 20.0),
                       Row(
                         crossAxisAlignment: CrossAxisAlignment.start,

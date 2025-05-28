@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_components/flutter_components.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:smart_harvest/screens/connect_portfolio/fetching_portfolio.dart';
 import 'package:smart_harvest/screens/widgets/app_background.dart';
+import 'package:smart_harvest/screens/widgets/pre_title_and_title.dart';
 import 'package:smart_harvest/screens/widgets/terms_conditions_and_privacy_policy.dart';
 
 class InvestmentPermission extends StatefulWidget {
@@ -24,14 +26,8 @@ class InvestmentPermissionState extends State<InvestmentPermission> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(height: 40.0),
-                Text(
-                  "Connect your ${widget.type} Portfolio".toUpperCase(),
-                  style: context.textTheme.bodyLarge,
-                ),
-                Text(
-                  "Give Permission\nto View Your Portfolio",
-                  style: context.textTheme.headlineMedium,
-                ),
+                ScreenPreTitle("Connect your ${widget.type} Portfolio"),
+                ScreenTitle("Give Permission\nto View Your Portfolio"),
                 Expanded(
                   child: Center(
                     child: DecoratedBox(
@@ -99,7 +95,13 @@ class InvestmentPermissionState extends State<InvestmentPermission> {
                     Expanded(
                       child: AppButton(
                         title: "Allow",
-                        onPressed: () {},
+                        onPressed: () {
+                          showModalBottomSheet(
+                            isDismissible: false,
+                            context: context,
+                            builder: (context) => FetchingPortfolio(),
+                          );
+                        },
                         borderRadius: 50.0,
                       ),
                     ),
