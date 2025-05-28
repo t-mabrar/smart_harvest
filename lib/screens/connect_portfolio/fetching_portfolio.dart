@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_components/flutter_components.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:smart_harvest/screens/home/dashboard.dart';
 import 'package:smart_harvest/screens/widgets/pre_title_and_title.dart';
 
 class FetchingPortfolio extends StatefulWidget {
@@ -74,7 +75,13 @@ class FetchingPortfolioState extends State<FetchingPortfolio> {
                       AppButton(
                         borderRadius: 50.0,
                         title: "Go to Dashboard",
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context).pushReplacement(
+                            MaterialPageRoute(
+                              builder: (context) => Dashboard(),
+                            ),
+                          );
+                        },
                         buttonFullWidth: true,
                       ),
                       SizedBox(height: 10.0),

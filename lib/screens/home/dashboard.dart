@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smart_harvest/screens/widgets/app_background.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({super.key});
@@ -10,6 +11,15 @@ class Dashboard extends StatefulWidget {
 class _DashboardState extends State<Dashboard> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      body: AppBackground(
+        child: SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 12.0),
+            child: Column(children: [const Placeholder()]),
+          ),
+        ),
+      ),
+    );
   }
 }
