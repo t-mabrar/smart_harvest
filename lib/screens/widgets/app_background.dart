@@ -3,7 +3,12 @@ import 'package:flutter_components/flutter_components.dart';
 
 class AppBackground extends StatelessWidget {
   final Widget child;
-  const AppBackground({super.key, required this.child});
+  final bool lessGradient;
+  const AppBackground({
+    super.key,
+    required this.child,
+    this.lessGradient = false,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +18,7 @@ class AppBackground extends StatelessWidget {
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
           colors: [context.indicatorColor, context.secondaryColor],
-          stops: [0.1, 0.65],
+          stops: lessGradient ? [0.08, 0.18] : [0.1, 0.65],
         ),
       ),
       child: Stack(

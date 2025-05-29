@@ -8,7 +8,6 @@ import 'package:smart_harvest/screens/home/menu/menu_screen.dart';
 import 'package:smart_harvest/screens/home/top_app_bar.dart';
 import 'package:smart_harvest/screens/widgets/app_background.dart';
 import 'package:smart_harvest/screens/widgets/menu_button.dart';
-import 'package:smart_harvest/screens/widgets/navigate_pop_button.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -25,6 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: AppBackground(
+        lessGradient: true,
         child: Stack(
           children: [
             SafeArea(
@@ -68,6 +68,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   setState(() {
                     showMenuScreen = false;
                   });
+                  // Navigator.of(context).pop();
                 },
               ),
             ],

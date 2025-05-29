@@ -121,7 +121,6 @@ class InvestmentVerificationState extends State<InvestmentVerification> {
                                   setState(() {
                                     showResendButton = true;
                                   });
-                                  debugPrint(endTime.toString());
                                 },
                               ),
                             ],

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_components/flutter_components.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:smart_harvest/core/extensions.dart';
 import 'package:smart_harvest/screens/home/home_screen.dart';
 import 'package:smart_harvest/screens/widgets/pre_title_and_title.dart';
 
@@ -33,7 +34,7 @@ class FetchingPortfolioState extends State<FetchingPortfolio> {
             topLeft: Radius.circular(20.0),
             topRight: Radius.circular(20.0),
           ),
-          color: Color(0xFF331201).withAlpha(210),
+          color: context.sectionBgColor,
         ),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20.0),

@@ -130,7 +130,6 @@ class _OtpVerificationState extends State<OtpVerification> {
                                   setState(() {
                                     showResendButton = true;
                                   });
-                                  debugPrint(endTime.toString());
                                 },
                               ),
                             ],

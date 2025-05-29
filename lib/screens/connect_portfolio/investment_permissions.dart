@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_components/flutter_components.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:smart_harvest/core/extensions.dart';
 import 'package:smart_harvest/screens/connect_portfolio/fetching_portfolio.dart';
 import 'package:smart_harvest/screens/widgets/app_background.dart';
 import 'package:smart_harvest/screens/widgets/pre_title_and_title.dart';
@@ -32,7 +33,7 @@ class InvestmentPermissionState extends State<InvestmentPermission> {
                   child: Center(
                     child: DecoratedBox(
                       decoration: BoxDecoration(
-                        color: Color(0xFF331201).withAlpha(210),
+                        color: context.sectionBgColor.withAlpha(210),
                         borderRadius: BorderRadius.circular(15.0),
                       ),
                       child: Padding(

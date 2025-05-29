@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_components/flutter_components.dart';
+import 'package:smart_harvest/core/extensions.dart';
 import 'package:smart_harvest/screens/widgets/menu_button.dart';
 
 class TopAppBar extends StatelessWidget {
@@ -24,7 +25,7 @@ class TopAppBar extends StatelessWidget {
               gradient: LinearGradient(
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
-                colors: [Color(0xFF461801), Color(0xFF331201)],
+                colors: [Color(0xFF461801), context.sectionBgColor],
               ),
               shape: BoxShape.circle,
               border: Border.all(color: Color(0xFF461801)),
