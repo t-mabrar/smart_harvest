@@ -5,6 +5,7 @@ import 'package:smart_harvest/screens/home/dashobard/portfolio_value.dart';
 import 'package:smart_harvest/screens/home/dashobard/potential_savings.dart';
 import 'package:smart_harvest/screens/home/dashobard/stocks_list.dart';
 import 'package:smart_harvest/screens/home/dashobard/tax_strategies.dart';
+import 'package:smart_harvest/screens/home/default/section_title.dart';
 import 'package:smart_harvest/screens/home/section_design.dart';
 
 class DashboardScreen extends StatefulWidget {
@@ -22,29 +23,14 @@ class _DashboardScreenState extends State<DashboardScreen> {
         spacing: 15.0,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            "Total Portfolio value",
-            style: context.textTheme.titleSmall!.copyWith(
-              fontWeight: FontWeight.bold,
-            ),
-          ),
+          SectionTitle("Total Portfolio value"),
           PortfolioValue(),
           GainAndLoss(),
 
-          Text(
-            "Tax Harvesting Opportunities",
-            style: context.textTheme.titleSmall!.copyWith(
-              fontWeight: FontWeight.bold,
-            ),
-          ),
+          SectionTitle("Tax Harvesting Opportunities"),
           PotentialSavings(),
           StocksList(),
-          Text(
-            "Learn Tax Strategies",
-            style: context.textTheme.titleSmall!.copyWith(
-              fontWeight: FontWeight.bold,
-            ),
-          ),
+          SectionTitle("Learn Tax Strategies"),
           TaxStrategies(),
           SectionDesign(
             child: Row(
@@ -65,12 +51,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
               ],
             ),
           ),
-          Text(
-            "Refer & Earn",
-            style: context.textTheme.titleSmall!.copyWith(
-              fontWeight: FontWeight.bold,
-            ),
-          ),
+          SectionTitle("Refer & Earn"),
           SectionDesign(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
