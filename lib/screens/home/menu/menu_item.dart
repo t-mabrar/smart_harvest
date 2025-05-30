@@ -16,9 +16,9 @@ class MenuItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       onTap: () {
-        // Navigator.of(
-        //   context,
-        // ).push(MaterialPageRoute(builder: (context) => widget));
+        Navigator.of(
+          context,
+        ).push(MaterialPageRoute(builder: (context) => widget));
       },
       contentPadding: EdgeInsets.zero,
       leading: Icon(iconData, color: Colors.white, size: 30.0),

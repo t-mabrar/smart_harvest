@@ -1,13 +1,14 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_components/flutter_components.dart';
 import 'package:smart_harvest/screens/connect_portfolio/investment_verification.dart';
 import 'package:smart_harvest/screens/widgets/app_background.dart';
+import 'package:smart_harvest/screens/widgets/navigate_pop_button.dart';
 import 'package:smart_harvest/screens/widgets/pre_title_and_title.dart';
 import 'package:smart_harvest/screens/widgets/terms_conditions_and_privacy_policy.dart';
 
 class ConnectYourPortfolio extends StatefulWidget {
-  const ConnectYourPortfolio({super.key});
+  final bool isSwitch;
+  const ConnectYourPortfolio({super.key, this.isSwitch = false});
 
   @override
   State<ConnectYourPortfolio> createState() => _ConnectYourPortfolioState();
@@ -22,17 +23,25 @@ class _ConnectYourPortfolioState extends State<ConnectYourPortfolio> {
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 12.0),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              // crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                // Text(widget.isSwitch.toString()),
                 SizedBox(height: 40.0),
-                ScreenPreTitle("Let’s manage your investments"),
-                ScreenTitle("Connect\nYour Portfolio"),
+                if (widget.isSwitch) ...[
+                  ScreenTitle("Mohammed Abrar"),
+                  Text("mohammedabrar312@gmail.com"),
+                ] else ...[
+                  ScreenPreTitle("Let’s manage your investments"),
+                  ScreenTitle("Connect\nYour Portfolio"),
+                ],
                 Expanded(
                   child: Column(
                     spacing: 20.0,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.center,
                     mainAxisSize: MainAxisSize.min,
                     children: [
+                      if (widget.isSwitch) ...[ScreenTitle("Switch Portfolio")],
                       EachInvestmentCard(
                         image:
                             "assets/images/investment_platforms/dhan_logo.png",
@@ -62,7 +71,15 @@ class _ConnectYourPortfolioState extends State<ConnectYourPortfolio> {
                     ],
                   ),
                 ),
-                TermsConditionsAndPrivacyPolicy(),
+                if (widget.isSwitch) ...[
+                  Align(
+                    alignment: Alignment.centerRight,
+                    child: NavigatePopButton(),
+                  ),
+                ] else ...[
+                  TermsConditionsAndPrivacyPolicy(),
+                ],
+
                 SizedBox(height: 5.0),
               ],
             ),

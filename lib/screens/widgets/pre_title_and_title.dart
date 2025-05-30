@@ -17,6 +17,6 @@ class ScreenTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(title, style: context.textTheme.headlineMedium);
+    return Text(title, style: context.textTheme.headlineSmall);
   }
 }

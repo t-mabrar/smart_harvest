@@ -2,7 +2,10 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_components/flutter_components.dart';
+import 'package:smart_harvest/screens/connect_portfolio/connect_your_portfolio.dart';
+import 'package:smart_harvest/screens/home/menu/about_us_screen.dart';
 import 'package:smart_harvest/screens/home/menu/menu_item.dart';
+import 'package:smart_harvest/screens/home/menu/profile_update.dart';
 import 'package:smart_harvest/screens/widgets/designer_details.dart';
 import 'package:smart_harvest/screens/widgets/navigate_pop_button.dart';
 import 'package:smart_harvest/screens/widgets/pre_title_and_title.dart';
@@ -57,13 +60,13 @@ class _MenuScreenState extends State<MenuScreen> {
                         MenuItem(
                           iconData: Icons.person,
                           title: "My Account",
-                          widget: Container(),
+                          widget: ProfileUpdate(),
                         ),
                         SizedBox(height: 10.0),
                         MenuItem(
                           iconData: Icons.published_with_changes_rounded,
                           title: "Switch Portfolio",
-                          widget: Container(),
+                          widget: ConnectYourPortfolio(isSwitch: true),
                         ),
                         SizedBox(height: 10.0),
                         MenuItem(
@@ -95,7 +98,13 @@ class _MenuScreenState extends State<MenuScreen> {
                                   title: "About Us",
                                   fontColor: Colors.white,
                                   fontSize: 20.0,
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    Navigator.of(context).push(
+                                      MaterialPageRoute(
+                                        builder: (context) => AboutUsScreen(),
+                                      ),
+                                    );
+                                  },
                                   hideUnderLine: true,
                                 ),
                                 Container(
