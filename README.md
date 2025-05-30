@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/t-mabrar/smart_harvest/refs/heads/main/assets/images/logo.png" alt="Smart Harvest Logo" width="120" />
+  <img src="https://mabrar.site/apps/assets/smart_harvesting/logo.png" alt="Smart Harvest Logo" width="120" />
 </p>
 
 <h1 align="center">📱 Smart Harvesting</h1>
