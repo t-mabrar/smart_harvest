@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:smart_harvest/screens/get_started_screen.dart';
-import 'package:smart_harvest/screens/home/home_screen.dart';
 import 'package:smart_harvest/screens/widgets/app_background.dart';
 import 'package:smart_harvest/screens/widgets/designer_details.dart';
 
